@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prathamesha C Shetty - Resume</title>
+    <style>
+      :root {
+        --bg: #f4f4f4;
+        --text: #222;
+        --card-bg: #fff;
+        --accent: #007bff;
+      }
+
+      [data-theme="dark"] {
+        --bg: #1e1e1e;
+        --text: #f0f0f0;
+        --card-bg: #2a2a2a;
+        --accent: #4dabf7;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 2rem;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact {
+        background-color: var(--card-bg);
+        padding: 1.2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+        transition: background 0.3s ease;
+      }
+
+      .contact p {
+        margin: 0.8rem 0;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .contact span {
+        font-size: 1.2rem;
+      }
+
+      .contact a {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      .contact a:hover {
+        color: #ff5722;
+      }
+
+      .btns {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .btn {
+        padding: 0.6rem 1.2rem;
+        background-color: var(--accent);
+        border: none;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      .section {
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: var(--accent);
+      }
+
+      ul {
+        padding-left: 1.2rem;
+      }
+
+      .toggle-dark {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: var(--accent);
+        color: white;
+        padding: 0.5rem 0.8rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 999;
+      }
+    </style>
+  </head>
+  <body data-theme="light">
+    <button class="toggle-dark" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <div class="container">
+      <div class="header">
+        <h1>Prathamesh C Shetty</h1>
+        <div class="contact">
+          <p>📞 7795056572</p>
+          <p>
+            📧
+            <a href="mailto:prathamesha42@gmail.com">prathamesha42@gmail.com</a>
+          </p>
+          <p>📍 Udupi, Karnataka, India</p>
+          <p>
+            🔗
+            <a href="https://github.com/PRATHAMESH-C-SHETTY" target="_blank"
+              >GitHub Profile</a
+            >
+          </p>
+        </div>
+        
+      </div>
+
+      <div class="section">
+        <h2>Professional Summary</h2>
+        <p>
+          Web development enthusiast pursuing a Bachelor of Engineering in
+          Computer Science and Design at PESITM. Skilled in WordPress, HTML,
+          CSS, JavaScript, and basic Python. Passionate about impactful
+          solutions. Contributor to the AI Career Advisor project. Team player
+          with experience in VTU inter-college and division cricket tournaments.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Education</h2>
+        <p>
+          <strong>Bachelor of Engineering (2022 - Present)</strong><br />
+          PES Institute of Technology and Management, Shivamogga<br />
+          CGPA: 7.75
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Projects</h2>
+        <ul>
+          <li>
+            <strong>CareerWise: AI-Based Career Advisor</strong><br />
+            Developed a career guidance platform using Python, Flask, and NLP.
+            Integrated recommendation systems and optimized scalability.
+          </li>
+          <li>
+            <strong>Sports Department Management System</strong><br />
+            DBMS for sports department scheduling and performance tracking using
+            MySQL, PHP, HTML, CSS, and JavaScript.
+          </li>
+          <li>
+            <strong>Branch Website Development</strong><br />
+            Created a WordPress website for the CSD branch with interactive
+            features and responsive design.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Skills</h2>
+        <ul>
+          <li>Web: HTML, CSS, JavaScript, WordPress</li>
+          <li>Programming: Python (basic), PHP</li>
+          <li>Database: MySQL</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Languages</h2>
+        <ul>
+          <li>Kannada</li>
+          <li>English</li>
+          <li>Hindi</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Reading</li>
+          <li>Cooking</li>
+          <li>Drawing</li>
+        </ul>
+      </div>
+    </div>
+    <div class="btns">
+        <a class="btn" href="RESUMe.pdf" download
+          >📄 Download Resume PDF</a
+        >
+      </div>
+
+    <script>
+      function toggleDarkMode() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        body.setAttribute("data-theme", newTheme);
+        document.querySelector(".toggle-dark").textContent =
+          newTheme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+      }
+    </script>
+  </body>
+</html>
