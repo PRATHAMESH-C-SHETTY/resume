@@ -115,22 +115,69 @@
         padding-left: 1.2rem;
       }
 
-      .toggle-dark {
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        background: var(--accent);
-        color: white;
-        padding: 0.5rem 0.8rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 999;
-      }
+      /* Neumorphic toggle button styles */
+      .toggle-wrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--card-bg);
+  width: 50px; /* smaller width */
+  height: 20px; /* smaller height */
+  border-radius: 12px; /* adjusted border radius for smaller button */
+  display: flex;
+  align-items: center;
+  padding: 3px; /* adjusted padding */
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+.toggle-icon {
+  width: 25px; /* smaller icon container */
+  height: 25px;
+  background: #1e1e1e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 4px;
+  transition: left 0.4s, background 0.4s;
+}
+
+.toggle-wrapper[data-theme="dark"] .toggle-icon {
+  background: #f4f4f4;
+  left: 25px; /* adjusted to fit the smaller width */
+}
+
+.toggle-label {
+  margin: 0 auto;
+  color: var(--text);
+  font-weight: bold;
+  font-size: 0.5rem; /* smaller font size */
+  transition: color 0.4s;
+  z-index: 2;
+}
+
+.icon {
+  font-size: 20px; /* smaller icon size */
+  color: white;
+}
+
+.toggle-wrapper[data-theme="dark"] .icon {
+  color: #1e1e1e;
+}
+
     </style>
   </head>
   <body data-theme="light">
-    <button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
+    <!-- Neumorphic toggle button -->
+    <div class="toggle-wrapper" id="toggle" onclick="toggleDarkMode()" data-theme="light">
+      <div class="toggle-icon" id="toggleIcon">
+        <span class="icon" id="icon">☀</span>
+      </div>
+      <span class="toggle-label" id="label"></span>
+    </div>
 
     <div class="container">
       <div class="header">
@@ -149,7 +196,6 @@
             >
           </p>
         </div>
-        
       </div>
 
       <div class="section">
@@ -220,20 +266,31 @@
         </ul>
       </div>
     </div>
+
     <div class="btns">
-        <a class="btn" href="RESUMe.pdf" download
-          >📄 Download Resume PDF</a
-        >
-      </div>
+      <a class="btn" href="RESUMe.pdf" download>📄 Download Resume PDF</a>
+    </div>
 
     <script>
       function toggleDarkMode() {
         const body = document.body;
+        const wrapper = document.getElementById("toggle");
+        const icon = document.getElementById("icon");
+        const label = document.getElementById("label");
+
         const currentTheme = body.getAttribute("data-theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
+
         body.setAttribute("data-theme", newTheme);
-        document.querySelector(".toggle-dark").textContent =
-          newTheme === "light" ? "🌙" : "☀️";
+        wrapper.setAttribute("data-theme", newTheme);
+
+        if (newTheme === "dark") {
+          icon.textContent = "🌙";
+          label.textContent = "";
+        } else {
+          icon.textContent = "☀";
+          label.textContent = "";
+        }
       }
     </script>
   </body>
