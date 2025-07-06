@@ -115,73 +115,26 @@
         padding-left: 1.2rem;
       }
 
-      /* Neumorphic toggle button styles */
-      .toggle-wrapper {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: var(--card-bg);
-  width: 50px; /* smaller width */
-  height: 20px; /* smaller height */
-  border-radius: 12px; /* adjusted border radius for smaller button */
-  display: flex;
-  align-items: center;
-  padding: 3px; /* adjusted padding */
-  cursor: pointer;
-  z-index: 999;
-  transition: background 0.4s, box-shadow 0.4s;
-}
-
-.toggle-icon {
-  width: 25px; /* smaller icon container */
-  height: 25px;
-  background: #1e1e1e;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 4px;
-  transition: left 0.4s, background 0.4s;
-}
-
-.toggle-wrapper[data-theme="dark"] .toggle-icon {
-  background: #f4f4f4;
-  left: 25px; /* adjusted to fit the smaller width */
-}
-
-.toggle-label {
-  margin: 0 auto;
-  color: var(--text);
-  font-weight: bold;
-  font-size: 0.5rem; /* smaller font size */
-  transition: color 0.4s;
-  z-index: 2;
-}
-
-.icon {
-  font-size: 20px; /* smaller icon size */
-  color: white;
-}
-
-.toggle-wrapper[data-theme="dark"] .icon {
-  color: #1e1e1e;
-}
-
+      .toggle-dark {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: var(--accent);
+        color: white;
+        padding: 0.5rem 0.8rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 999;
+      }
     </style>
   </head>
   <body data-theme="light">
-    <!-- Neumorphic toggle button -->
-    <div class="toggle-wrapper" id="toggle" onclick="toggleDarkMode()" data-theme="light">
-      <div class="toggle-icon" id="toggleIcon">
-        <span class="icon" id="icon">☀</span>
-      </div>
-      <span class="toggle-label" id="label"></span>
-    </div>
+    <button class="toggle-dark" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
     <div class="container">
       <div class="header">
-        <h1>PRATHAMESH C SHETTY</h1>
+        <h1>Prathamesh C Shetty</h1>
         <div class="contact">
           <p>📞 7795056572</p>
           <p>
@@ -196,6 +149,7 @@
             >
           </p>
         </div>
+        
       </div>
 
       <div class="section">
@@ -249,6 +203,20 @@
       </div>
 
       <div class="section">
+        <h2>Tools & Technologies</h2>
+        <ul>
+          <li>
+            <strong>Generative AI Tools</strong><br />
+            Explored and applied Generative AI tools like ChatGPT, DALL·E, and GitHub Copilot to enhance productivity and creativity in web development projects.
+          </li>
+          <li>
+            <strong>Design Tools</strong><br />
+            Have explored Canva and Adobe Photoshop for graphic and visual design tasks; Familiar with basic image editing, layout creation, and designing simple visual content for web and social media.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
         <h2>Languages</h2>
         <ul>
           <li>Kannada</li>
@@ -266,31 +234,20 @@
         </ul>
       </div>
     </div>
-
     <div class="btns">
-      <a class="btn" href="RESUME.pdf" download>📄 Download Resume PDF</a>
-    </div>
+        <a class="btn" href="resume.pdf" download
+          >📄 Download Resume PDF</a
+        >
+      </div>
 
     <script>
       function toggleDarkMode() {
         const body = document.body;
-        const wrapper = document.getElementById("toggle");
-        const icon = document.getElementById("icon");
-        const label = document.getElementById("label");
-
         const currentTheme = body.getAttribute("data-theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
-
         body.setAttribute("data-theme", newTheme);
-        wrapper.setAttribute("data-theme", newTheme);
-
-        if (newTheme === "dark") {
-          icon.textContent = "🌙";
-          label.textContent = "";
-        } else {
-          icon.textContent = "☀";
-          label.textContent = "";
-        }
+        document.querySelector(".toggle-dark").textContent =
+          newTheme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
       }
     </script>
   </body>
